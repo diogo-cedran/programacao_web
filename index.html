@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <title>Página do Pokémon Squirtle</title>
     <style>
-      /* Reset de estilos para garantir consistência em diferentes navegadores */
       body,
       h1,
       h2,
@@ -20,13 +19,49 @@
         padding: 0;
       }
 
-      main {
-        max-width: 80vw;
-        margin: 0 auto;
+      nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background-color: #343a40;
+        padding: 10px;
+        margin-bottom: 20px;
+        list-style: none;
       }
 
-      main > section {
+      nav a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        color: #ffc107;
+      }
+
+      main section,
+      main article,
+      main table {
+        display: flex;
+        flex-direction: column;
+        color: black;
+        background-color: #fff;
         padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        width: 80%;
+      }
+
+      article {
+        background-color: #ffc107;
+        color: #fff;
+      }
+
+      a {
+        color: #4592c4;
+        font-weight: bold;
       }
 
       p {
@@ -37,6 +72,59 @@
         margin-left: 20px;
       }
 
+      .squirtle-image {
+        display: block;
+        margin: 0 auto;
+      }
+
+      .squirtle-image img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .lupa::marker {
+        content: "🔍";
+      }
+
+      .recursos a:hover {
+        opacity: 0.8;
+      }
+
+      .evolucao-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .pokemon-evolucao {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 10px;
+      }
+
+      .pokemon-evolucao img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      .pokemon-evolucao span {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      main > section {
+        padding: 20px;
+      }
+
       body {
         font-family: "Arial", sans-serif;
         line-height: 1.6;
@@ -45,9 +133,11 @@
       }
 
       header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: #007bff;
         color: #fff;
-        text-align: center;
         padding: 20px;
       }
 
@@ -55,55 +145,8 @@
         font-size: 24px;
       }
 
-      section h1,
-      section h2,
-      section h3 {
-        margin-bottom: 8px;
-      }
-
-      article h1,
-      article h2,
-      article h3 {
-        margin-bottom: 10px;
-      }
-
-      nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        background-color: #343a40;
-        padding: 10px;
-        margin-bottom: 20px;
-      }
-
-      nav a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: bold;
-      }
-
-      th {
-        padding: 10px 24px;
-      }
-
-      tr {
-        text-align: center;
-      }
-
-      main section,
-      main article,
-      main table {
-        color: black;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-      }
-
-      article {
-        background-color: #ffc107;
-        color: #fff;
+      footer a:hover {
+        opacity: 0.8;
       }
 
       footer {
@@ -112,45 +155,11 @@
         padding: 20px;
         text-align: center;
         bottom: 0;
-        width: 100%;
       }
 
       footer a {
         color: #ffc107;
         text-decoration: none;
-      }
-
-      .lupa::marker {
-        content: "🔍";
-      }
-
-      .div-img-evolution {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .img-evolution {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        color: black;
-        text-decoration: none;
-      }
-
-      nav a:hover {
-        color: #ffc107;
-      }
-
-      a {
-        color: #4592c4;
-      }
-
-      .recursos a:hover {
-        opacity: 0.8;
-      }
-
-      footer a:hover {
-        opacity: 0.8;
       }
     </style>
   </head>
@@ -171,19 +180,23 @@
     </nav>
 
     <main>
-      <section id="info-squirtle" aria-labelledby="info-squirtle-label">
+      <section id="info-squirtle" aria-label="info-squirtle-label">
         <h2 id="info-squirtle-label">Informações sobre Squirtle</h2>
-        <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
-          alt="Squirtle - Pokémon do tipo Água"
-        />
+        <div class="squirtle-image">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
+            width="200"
+            height="200"
+            alt="Squirtle - Pokémon do tipo Água"
+          />
+        </div>
         <p>
           Squirtle é um Pokémon do tipo Água. É o Pokémon inicial da região de
           Kanto e evolui para Wartortle.
         </p>
       </section>
 
-      <section id="caracteristicas" aria-labelledby="caracteristicas-label">
+      <section id="caracteristicas" aria-label="caracteristicas-label">
         <h2 id="caracteristicas-label">Características</h2>
         <p>
           Squirtle é conhecido por sua concha nas costas, que oferece proteção
@@ -192,7 +205,7 @@
         </p>
       </section>
 
-      <section id="curiosidades" aria-labelledby="curiosidades-label">
+      <section id="curiosidades" aria-label="curiosidades-label">
         <h2 id="curiosidades-label">Curiosidades</h2>
         <ul>
           <li class="lupa">
@@ -209,7 +222,7 @@
         </ul>
       </section>
 
-      <article id="artigo-squirtle" aria-labelledby="artigo-squirtle-label">
+      <article id="artigo-squirtle" aria-label="artigo-squirtle-label">
         <h2 id="artigo-squirtle-label">Squirtle: O Amigo Aquático</h2>
         <p>
           Squirtle, com sua aparência simpática e sua habilidade em controlar a
@@ -233,7 +246,7 @@
         </p>
       </article>
 
-      <section id="recursos" aria-labelledby="recursos-label">
+      <section id="recursos" aria-label="recursos-label">
         <h2 id="recursos-label">Recursos Adicionais</h2>
         <ul class="recursos">
           <li>
@@ -253,40 +266,45 @@
         </ul>
       </section>
 
-      <section id="evolucao" aria-labelledby="evolucao-label">
-        <div class="div-img-evolution">
-          <a
-            href="https://bulbapedia.bulbagarden.net/wiki/Main_Page"
-            class="img-evolution"
-          >
-            <img
-              src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png"
-              alt="Squirtle - Pokemon do Tipo Água"
-            />
+      <section id="evolucao" aria-label="evolucao-label">
+        <h2 id="evolucao-label">Evolução</h2>
+
+        <div class="evolucao-container">
+          <div class="pokemon-evolucao">
+            <a href="https://bulbapedia.bulbagarden.net/wiki/Main_Page">
+              <img
+                src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png"
+                width="215"
+                height="215"
+                alt="Imagem do pokémon Squirtle"
+              />
+            </a>
+
             <span>1. Squirtle</span>
-          </a>
+          </div>
+          <div class="pokemon-evolucao">
+            <a href="https://bulbapedia.bulbagarden.net/wiki/Main_Page">
+              <img
+                src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/008.png"
+                width="215"
+                height="215"
+                alt="Imagem do pokémon Wartortle"
+              />
+            </a>
 
-          <a
-            href="https://bulbapedia.bulbagarden.net/wiki/Main_Page"
-            class="img-evolution"
-          >
-            <img
-              src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/008.png"
-              alt="Squirtle - Pokemon do Tipo Água"
-            />
             <span>2. Wartortle</span>
-          </a>
-
-          <a
-            href="https://bulbapedia.bulbagarden.net/wiki/Main_Page"
-            class="img-evolution"
-          >
-            <img
-              src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"
-              alt="Squirtle - Pokemon do Tipo Água"
-            />
+          </div>
+          <div class="pokemon-evolucao">
+            <a href="https://bulbapedia.bulbagarden.net/wiki/Main_Page">
+              <img
+                src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/009.png"
+                width="215"
+                height="215"
+                alt="Imagem do pokémon Blastoise"
+              />
+            </a>
             <span>3. Blastoise</span>
-          </a>
+          </div>
         </div>
       </section>
     </main>
